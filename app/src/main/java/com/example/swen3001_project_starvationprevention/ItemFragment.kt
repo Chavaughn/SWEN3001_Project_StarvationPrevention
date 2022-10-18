@@ -6,14 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.swen3001_project_starvationprevention.databinding.RestaurantFragmentBinding
+import com.example.swen3001_project_starvationprevention.databinding.ItemFragmentBinding
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class RestaurantFragment : Fragment() {
+class ItemFragment : Fragment() {
 
-    private var _binding: RestaurantFragmentBinding? = null
+    private var _binding: ItemFragmentBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,13 +24,15 @@ class RestaurantFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = RestaurantFragmentBinding.inflate(inflater, container, false)
+        _binding = ItemFragmentBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
     }
 
     override fun onDestroyView() {
