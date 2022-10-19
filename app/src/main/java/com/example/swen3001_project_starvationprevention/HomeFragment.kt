@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.swen3001_project_starvationprevention.databinding.HomeFragmentBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -40,10 +41,7 @@ class HomeFragment : Fragment() {
             returnMaintSnackbar(fragView,"We haven't done anything to this yet!")
         }
         binding.restaurant1.setOnClickListener{
-            val transaction = activity?.supportFragmentManager?.beginTransaction()
-            transaction?.replace(this@HomeFragment.id, RestaurantFragment())
-            transaction?.disallowAddToBackStack()
-            transaction?.commit()
+            findNavController().navigate(R.id.action_homeFragment_to_restaurantFragment)
         }
     }
 
