@@ -8,6 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="Buttons">#CD544C</color>
+    <color name="appMain">#DF827C</color>
+    <color name="appSec">#CF5D55</color>
     <color name="SbarIBackground">#F3EBEB</color>
     <color name="Highlight">#D9D9D9</color>
 </resources>

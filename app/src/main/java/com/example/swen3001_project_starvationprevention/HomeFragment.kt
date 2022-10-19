@@ -1,12 +1,14 @@
 package com.example.swen3001_project_starvationprevention
 
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.example.swen3001_project_starvationprevention.databinding.HomeFragmentBinding
+import com.google.android.material.snackbar.Snackbar
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -29,12 +31,21 @@ class HomeFragment : Fragment() {
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+    override fun onViewCreated(fragView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(fragView, savedInstanceState)
+        binding.viewAllRes.setOnClickListener {
+            returnMaintSnackbar(fragView,"We haven't done anything to this yet!")
         }
+        binding.search.setOnClickListener{
+            returnMaintSnackbar(fragView,"We haven't done anything to this yet!")
+        }
+    }
+
+    private fun returnMaintSnackbar(view: View, text: String){
+        val snackbar = Snackbar.make(view, text, Snackbar.LENGTH_LONG)
+        snackbar.setAction("Action", null).show()
+        snackbar.setBackgroundTint(ContextCompat.getColor(requireActivity().applicationContext, R.color.appMain))
+        return
     }
 
     override fun onDestroyView() {
