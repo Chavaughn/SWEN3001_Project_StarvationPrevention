@@ -1,12 +1,13 @@
 package com.example.swen3001_project_starvationprevention
 
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.swen3001_project_starvationprevention.databinding.HomeFragmentBinding
 import com.google.android.material.snackbar.Snackbar
 
@@ -38,6 +39,9 @@ class HomeFragment : Fragment() {
         }
         binding.search.setOnClickListener{
             returnMaintSnackbar(fragView,"We haven't done anything to this yet!")
+        }
+        binding.restaurant1.setOnClickListener{
+            findNavController().navigate(R.id.action_homeFragment_to_restaurantFragment)
         }
     }
 
