@@ -26,6 +26,7 @@
 
     <string name="testrestaurant1">Mama\'s Cookshop</string>
     <string name="testrestaurant2">Papa\'s Cookshop</string>
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_loading">LoadingActivity</string>
 </resources>

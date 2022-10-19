@@ -1,6 +1,6 @@
 package com.example.swen3001_project_starvationprevention
 
-import android.graphics.Color
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -38,6 +38,12 @@ class HomeFragment : Fragment() {
         }
         binding.search.setOnClickListener{
             returnMaintSnackbar(fragView,"We haven't done anything to this yet!")
+        }
+        binding.restaurant1.setOnClickListener{
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
+            transaction?.replace(this@HomeFragment.id, RestaurantFragment())
+            transaction?.disallowAddToBackStack()
+            transaction?.commit()
         }
     }
 
