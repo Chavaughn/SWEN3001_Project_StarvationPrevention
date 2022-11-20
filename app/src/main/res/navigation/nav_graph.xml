@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_restaurantFragment"
             app:destination="@id/restaurantFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment3"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/restaurantFragment"
@@ -27,5 +30,13 @@
         android:id="@+id/itemFragment"
         android:name="com.example.swen3001_project_starvationprevention.ItemFragment"
         android:label="ItemFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.swen3001_project_starvationprevention.SettingsFragment"
+        android:label="SettingsFragment" >
+        <action
+            android:id="@+id/action_settingsFragment3_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

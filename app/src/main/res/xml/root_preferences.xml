@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="Settings">
+        <SwitchPreference
+            android:key="theme_preference"
+            android:defaultValue="false"
+            android:title="Dark Theme"/>
+
+    </PreferenceCategory>
+
+
+<!--    <CheckBoxPreference-->
+<!--        android:defaultValue="false"-->
+<!--        android:key="check_box_preference_1"-->
+<!--        android:title="Check box preference" />-->
+
+    <PreferenceCategory
+    android:title="About"/>
+    <Preference
+        android:title="Version"
+        android:summary="1.0.0"/>
+
+    <PreferenceCategory
+        android:title="Notifications"/>
+
+
+    <SwitchPreferenceCompat
+        android:key="Notifications"
+        android:title="Notifications"
+        android:summaryOn="You will no longer receive notifications"
+        android:summaryOff="You will receive notifications"/>
+
+<!--    <SeekBarPreference-->
+<!--        android:key="volume_notifications"-->
+<!--        android:title="Volume"-->
+<!--        android:showSeekBarValue="true"-->
+<!--        android:defaultValue="0"/>-->
+
+
+
+</PreferenceScreen>
