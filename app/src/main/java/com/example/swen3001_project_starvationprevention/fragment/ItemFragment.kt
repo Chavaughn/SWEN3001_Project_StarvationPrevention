@@ -1,4 +1,4 @@
-package com.example.swen3001_project_starvationprevention
+package com.example.swen3001_project_starvationprevention.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,9 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.swen3001_project_starvationprevention.databinding.ItemFragmentBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class ItemFragment : Fragment() {
 
     private var _binding: ItemFragmentBinding? = null

@@ -6,15 +6,13 @@
         android:icon="@drawable/home_icon"
         android:title="@string/home" />
     <item
-        android:id="@+id/restaurantFragment"
         android:icon="@drawable/favourite_icon"
         android:title="@string/favourites" />
     <item
-        android:id="@+id/itemFragment"
+        android:id="@+id/myCartFragment"
         android:icon="@drawable/my_cart"
         android:title="@string/my_cart" />
     <item
-        android:id="@+id/settingsFragment"
         android:icon="@drawable/settings"
         android:title="@string/settings" />
 

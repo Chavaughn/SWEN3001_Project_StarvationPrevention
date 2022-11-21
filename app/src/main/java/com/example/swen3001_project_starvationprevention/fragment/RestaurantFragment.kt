@@ -1,4 +1,4 @@
-package com.example.swen3001_project_starvationprevention
+package com.example.swen3001_project_starvationprevention.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
