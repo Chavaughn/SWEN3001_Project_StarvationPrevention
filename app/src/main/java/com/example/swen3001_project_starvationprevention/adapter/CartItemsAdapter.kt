@@ -5,11 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.annotation.Nullable
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swen3001_project_starvationprevention.R
 import com.example.swen3001_project_starvationprevention.model.MyCartItem
 
-class CartItemsAdapter internal constructor(context: Context): RecyclerView.Adapter<CartItemsAdapter.CartItemViewHolder>(){
+class CartItemsAdapter internal constructor(context: Context?): RecyclerView.Adapter<CartItemsAdapter.CartItemViewHolder>(){
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var myCartItems = emptyList<MyCartItem>() // Cached copy of Students
 

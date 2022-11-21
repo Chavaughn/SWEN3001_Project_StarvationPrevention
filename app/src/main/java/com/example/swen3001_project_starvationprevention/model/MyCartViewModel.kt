@@ -1,6 +1,7 @@
 package com.example.swen3001_project_starvationprevention.model
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
@@ -17,7 +18,8 @@ class MyCartViewModel(application: Application) : AndroidViewModel(application){
     init {
         val cartItemsDao = StarvationPreventionDatabase.getDatabase(application, viewModelScope).cartItemsDao()
         repository = CartRepository(cartItemsDao)
-        allCartItems = repository.allStudents
+        allCartItems = repository.allCartItems
+
     }
 
     fun insert(myCartItem: MyCartItem) = viewModelScope.launch(Dispatchers.IO){

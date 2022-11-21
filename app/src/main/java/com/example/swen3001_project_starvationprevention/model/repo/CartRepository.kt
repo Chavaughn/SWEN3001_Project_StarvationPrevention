@@ -10,7 +10,8 @@ class CartRepository(private val cartItemsDao: CartItemsDao) {
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-    val allStudents: LiveData<List<MyCartItem>> = cartItemsDao.getAllLiveCartItems()
+    val allCartItems: LiveData<List<MyCartItem>> = cartItemsDao.getAllLiveCartItems()
+
 
     suspend fun insert(myCartItem: MyCartItem) {
         cartItemsDao.insert(myCartItem)
