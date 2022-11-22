@@ -2,15 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Buttons" >
+    tools:context=".fragment.MyCartFragment" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/constraintLayoutInner"
         android:layout_width="0dp"
         android:layout_height="678dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/SbarIBackground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,13 +19,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="0dp"
+            android:layout_height="473dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toBottomOf="@+id/MyCart"
+            app:layout_constraintVertical_bias="0.315"
+            tools:listitem="@layout/cart_items_fragment" />
+
         <TextView
             android:id="@+id/MyCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="208dp"
-            android:text="@string/foodItem1"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/my_cart"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
@@ -44,26 +58,5 @@
             android:orientation="vertical"
             app:layout_constraintGuide_begin="358dp" />
 
-        <TextView
-            android:id="@+id/itemDescription"
-            android:layout_width="0dp"
-            android:layout_height="220dp"
-            android:layout_marginTop="40dp"
-            android:text="@string/loremIpsum"
-            app:layout_constraintEnd_toStartOf="@+id/guideline6"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toBottomOf="@+id/MyCart" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="257dp"
-        android:layout_height="244dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.110000014"
-        app:srcCompat="@mipmap/friedchicken" />
 </androidx.constraintlayout.widget.ConstraintLayout>
