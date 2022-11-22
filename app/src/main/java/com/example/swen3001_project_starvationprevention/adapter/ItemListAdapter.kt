@@ -1,4 +1,4 @@
-package com.example.swen3001_project_starvationprevention
+package com.example.swen3001_project_starvationprevention.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.swen3001_project_starvationprevention.R
 
 class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
@@ -16,8 +17,8 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var itemImageView = itemView.findViewById<ImageView>(R.id.item_image)
-        var itemName: TextView = itemView.findViewById(R.id.item_name)
-        val itemPrice: TextView = itemView.findViewById(R.id.item_price)
+        var itemName: TextView = itemView.findViewById(R.id.itemNameCart)
+        val itemPrice: TextView = itemView.findViewById(R.id.itemCostCart)
 
         init{
             itemView.setOnClickListener{

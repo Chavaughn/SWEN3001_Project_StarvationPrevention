@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.swen3001_project_starvationprevention.adapter.ItemListAdapter
 import com.example.swen3001_project_starvationprevention.databinding.RestaurantFragmentBinding
 
 /**

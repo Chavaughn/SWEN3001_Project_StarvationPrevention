@@ -8,8 +8,8 @@
     android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="4dp"
-    app:cardBackgroundColor="@color/white"
     app:contentPadding="4dp"
+    app:cardBackgroundColor="@color/white"
 
     >
 
@@ -36,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/item_name"
+            android:id="@+id/itemNameCart"
             android:layout_width="139dp"
             android:layout_height="60dp"
             android:text="TextView"
@@ -48,7 +48,7 @@
             app:layout_constraintVertical_bias="0.47" />
 
         <TextView
-            android:id="@+id/item_price"
+            android:id="@+id/itemCostCart"
             android:layout_width="107dp"
             android:layout_height="29dp"
             android:text="TextView"
@@ -80,7 +80,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.818"
-            app:layout_constraintStart_toEndOf="@+id/item_price"
+            app:layout_constraintStart_toEndOf="@+id/itemCostCart"
             app:layout_constraintTop_toTopOf="@+id/guideline10"
             app:layout_constraintVertical_bias="0.255"
             app:srcCompat="@drawable/favourite_icon" />
