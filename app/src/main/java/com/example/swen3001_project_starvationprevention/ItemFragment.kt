@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.swen3001_project_starvationprevention.databinding.ItemFragmentBinding
 
@@ -12,6 +13,7 @@ import com.example.swen3001_project_starvationprevention.databinding.ItemFragmen
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class ItemFragment : Fragment() {
+
 
     private var _binding: ItemFragmentBinding? = null
 
@@ -23,7 +25,10 @@ class ItemFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        //TextView itemDescription = (TextView)findViewById(R.id.itemDescription);
+        super.onCreate(savedInstanceState)
+        binding.floatingActionButton2
+        
         _binding = ItemFragmentBinding.inflate(inflater, container, false)
         return binding.root
 
