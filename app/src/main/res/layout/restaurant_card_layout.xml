@@ -49,15 +49,15 @@
 
         <TextView
             android:id="@+id/item_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="107dp"
+            android:layout_height="29dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.132"
+            app:layout_constraintHorizontal_bias="0.293"
             app:layout_constraintStart_toStartOf="@+id/guideline6"
             app:layout_constraintTop_toTopOf="@+id/guideline10"
-            app:layout_constraintVertical_bias="0.326" />
+            app:layout_constraintVertical_bias="0.304" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline6"
@@ -75,15 +75,15 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="28dp"
-            android:layout_height="24dp"
+            android:layout_width="34dp"
+            android:layout_height="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.802"
+            app:layout_constraintHorizontal_bias="0.818"
             app:layout_constraintStart_toEndOf="@+id/item_price"
             app:layout_constraintTop_toTopOf="@+id/guideline10"
-            app:layout_constraintVertical_bias="0.45"
-            app:srcCompat="@drawable/playsmall" />
+            app:layout_constraintVertical_bias="0.255"
+            app:srcCompat="@drawable/favourite_icon" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

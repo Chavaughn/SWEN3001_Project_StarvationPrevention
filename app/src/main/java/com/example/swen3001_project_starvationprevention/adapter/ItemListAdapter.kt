@@ -13,7 +13,7 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
     private var title = arrayOf("Fried Chicken", "Barbeque Chicken", "Chicken Rice", "Chicken Noodle", "Chicken Chop", "Chicken Burger", "Chicken Wings", "Chicken Salad", "Chicken Soup", "Chicken Curry")
     private var price = arrayOf("5.00", "6.00", "7.00", "8.00", "9.00", "10.00", "11.00", "12.00", "13.00", "14.00")
-    private var foodImage = arrayOf(R.mipmap.goldenfriedchicken, R.mipmap.goldenfriedchicken_round, R.mipmap.goldenfriedchicken, R.mipmap.goldenfriedchicken, R.mipmap.goldenfriedchicken, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background)
+    private var foodImage = arrayOf(R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background)
 
     inner class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var itemImageView = itemView.findViewById<ImageView>(R.id.item_image)
