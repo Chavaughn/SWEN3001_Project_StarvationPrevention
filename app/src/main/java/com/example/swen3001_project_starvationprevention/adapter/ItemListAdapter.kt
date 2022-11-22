@@ -17,8 +17,8 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
     inner class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var itemImageView = itemView.findViewById<ImageView>(R.id.item_image)
-        var itemName: TextView = itemView.findViewById(R.id.itemNameCart)
-        val itemPrice: TextView = itemView.findViewById(R.id.itemCostCart)
+        var itemName: TextView = itemView.findViewById(R.id.item_name)
+        val itemPrice: TextView = itemView.findViewById(R.id.item_price)
 
         init{
             itemView.setOnClickListener{
