@@ -12,11 +12,18 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:buttonStyle">@style/Button</item>
+
     </style>
 
     <style name="Theme.SWEN3001_Project_StarvationPrevention.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
     </style>
 
     <style name="Theme.SWEN3001_Project_StarvationPrevention.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
