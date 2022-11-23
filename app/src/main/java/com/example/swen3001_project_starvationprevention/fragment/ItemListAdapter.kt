@@ -1,4 +1,4 @@
-package com.example.swen3001_project_starvationprevention
+package com.example.swen3001_project_starvationprevention.fragment
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,13 +6,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.swen3001_project_starvationprevention.R
+import com.example.swen3001_project_starvationprevention.model.RestaurantItem
+import androidx.navigation.fragment.findNavController
+import com.example.swen3001_project_starvationprevention.HomeActivity
 
 class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
-    private var title = arrayOf("Fried Chicken", "Barbeque Chicken", "Chicken Rice", "Chicken Noodle", "Chicken Chop", "Chicken Burger", "Chicken Wings", "Chicken Salad", "Chicken Soup", "Chicken Curry")
-    private var price = arrayOf("5.00", "6.00", "7.00", "8.00", "9.00", "10.00", "11.00", "12.00", "13.00", "14.00")
-    private var foodImage = arrayOf(R.mipmap.goldenfriedchicken, R.mipmap.goldenfriedchicken_round, R.mipmap.goldenfriedchicken, R.mipmap.goldenfriedchicken, R.mipmap.goldenfriedchicken, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background, R.drawable.goldenfriedchicken_background)
+    private var itemList = emptyList<RestaurantItem>()
 
     inner class ItemViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var itemImageView = itemView.findViewById<ImageView>(R.id.item_image)
@@ -24,7 +28,8 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
                 val position: Int = bindingAdapterPosition
                 //val itemName = title[position]
                 //val itemPrice = price[position]
-                Toast.makeText(itemView.context, "Item Clicked ${title[position]}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(itemView.context, "Item Clicked ${itemList[position]}", Toast.LENGTH_SHORT).show()
+                //findNavController(View ,1).navigate(R.id.action_restaurantFragment_to_itemFragment)
             }
 
         }
@@ -38,16 +43,20 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        //val current = students[position]
-        holder.itemName.text = title[position]
-        holder.itemPrice.text = price[position]
-        holder.itemImageView.setImageResource(foodImage[position])
+        val currentItem = itemList[position]
+        holder.itemName.text = currentItem.item_name
+        holder.itemPrice.text = currentItem.item_price.toString()
+        //holder.itemImageView.setImageResource(foodImage[position])
 
     }
 
     override fun getItemCount(): Int {
 
-        return title.size
+        return itemList.size
+    }
+    fun setData(restaurantItem: List<RestaurantItem>){
+        this.itemList = restaurantItem
+        notifyDataSetChanged()
     }
 
 
