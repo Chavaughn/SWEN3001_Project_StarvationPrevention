@@ -1,4 +1,4 @@
-package com.example.swen3001_project_starvationprevention.fragment
+package com.example.swen3001_project_starvationprevention.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,13 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.navigation.Navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swen3001_project_starvationprevention.R
 import com.example.swen3001_project_starvationprevention.model.RestaurantItem
-import androidx.navigation.fragment.findNavController
-import com.example.swen3001_project_starvationprevention.HomeActivity
 
 class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 

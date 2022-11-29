@@ -7,23 +7,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import coil.ImageLoader
 import com.example.swen3001_project_starvationprevention.databinding.RestaurantFragmentBinding
 import com.example.swen3001_project_starvationprevention.model.RestaurantItemViewModel
-// Import coil
-import coil.load
-import coil.request.ImageRequest
-import coil.request.ImageResult
-import coil.request.SuccessResult
 import com.example.swen3001_project_starvationprevention.R
+import com.example.swen3001_project_starvationprevention.adapter.ItemListAdapter
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -94,15 +87,7 @@ class RestaurantFragment : Fragment() {
             items?.let { adapter.setData(it) }
         })
     }
-    private suspend fun getBitmap(): Bitmap{
-        val loading = ImageLoader(requireContext())
-        val request = ImageRequest.Builder(requireContext())
-            .data("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
-            .build()
 
-        val result = (loading.execute(request) as SuccessResult).drawable
-        return (result as BitmapDrawable).bitmap
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
