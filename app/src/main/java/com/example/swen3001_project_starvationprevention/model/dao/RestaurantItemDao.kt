@@ -18,7 +18,7 @@ interface RestaurantItemDao {
     fun getAllRestaurantItems(): List<RestaurantItem>
 
     @Query("SELECT * FROM restaurantItems ORDER BY item_name ASC")
-    fun getAllItems(): LiveData<List<RestaurantItem>>
+    fun getAllLiveItems(): LiveData<List<RestaurantItem>>
 
     @Query("SELECT * FROM restaurantItems WHERE restaurant_id = :restaurantId ORDER BY item_name ASC")
     fun getAllRestaurantItemsByRestaurantId(restaurantId: UUID): List<RestaurantItem>

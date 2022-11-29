@@ -17,7 +17,6 @@ import com.example.swen3001_project_starvationprevention.adapter.ItemListAdapter
 import com.example.swen3001_project_starvationprevention.databinding.RestaurantFragmentBinding
 import com.example.swen3001_project_starvationprevention.model.RestaurantItemViewModel
 import com.example.swen3001_project_starvationprevention.R
-import com.example.swen3001_project_starvationprevention.adapter.ItemListAdapter
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.

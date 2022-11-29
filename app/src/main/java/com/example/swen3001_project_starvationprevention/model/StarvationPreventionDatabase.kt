@@ -7,6 +7,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.swen3001_project_starvationprevention.model.dao.CartItemsDao
+import com.example.swen3001_project_starvationprevention.model.dao.RestaurantItemDao
 import com.example.swen3001_project_starvationprevention.model.dao.RestaurantsDao
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -15,12 +16,14 @@ import java.util.*
 // Annotates class to be a Room Database with a table (entity) of the Word class
 @Database(entities =
     [MyCartItem::class,
-    Restaurants::class],
+    Restaurants::class,
+    RestaurantItem::class],
     version = 2, exportSchema = false)
 public abstract class StarvationPreventionDatabase : RoomDatabase() {
 
    abstract fun cartItemsDao(): CartItemsDao
    abstract fun restaurantsDao(): RestaurantsDao
+   abstract fun restaurantItemDao(): RestaurantItemDao
 
    companion object {
         // Singleton prevents multiple instances of database opening at the
@@ -53,12 +56,12 @@ public abstract class StarvationPreventionDatabase : RoomDatabase() {
             super.onOpen(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    populateDatabase(database.cartItemsDao(), database.restaurantsDao())
+                    populateDatabase(database.cartItemsDao(), database.restaurantsDao(), database.restaurantItemDao())
                 }
             }
         }
 
-        suspend fun populateDatabase(cartItemsDao: CartItemsDao, restaurantsDao: RestaurantsDao) {
+        suspend fun populateDatabase(cartItemsDao: CartItemsDao, restaurantsDao: RestaurantsDao, restaurantItemDao: RestaurantItemDao) {
             // Delete all content here.
             cartItemsDao.deleteAll()
             restaurantsDao.deleteAll()
@@ -72,6 +75,14 @@ public abstract class StarvationPreventionDatabase : RoomDatabase() {
             restaurantsDao.insert(restaurant)
             restaurant = Restaurants("Papa's Cookshop","6:10 am","6:010 pm",0,UUID.randomUUID())
             restaurantsDao.insert(restaurant)
+            var item = RestaurantItem("Fried Chicken", "Mains", 1500.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            restaurantItemDao.insert(item)
+            item = RestaurantItem("Fried Rice", "Mains", 1000.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            restaurantItemDao.insert(item)
+            item = RestaurantItem("Fried Noodles", "Mains", 1000.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            restaurantItemDao.insert(item)
+            item = RestaurantItem("Fried Fish", "Mains", 2000.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            restaurantItemDao.insert(item)
         }
     }
 }
