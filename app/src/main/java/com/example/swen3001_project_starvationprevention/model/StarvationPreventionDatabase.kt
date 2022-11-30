@@ -82,11 +82,11 @@ public abstract class StarvationPreventionDatabase : RoomDatabase() {
             restaurantItemDao.insert(item)
             item = RestaurantItem("Fried Fish", "Mains", 2000.00, 4, UUID.randomUUID(), 3)
             restaurantItemDao.insert(item)
-            item = RestaurantItem("Bottle Water", "Drinks", 500.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            item = RestaurantItem("Bottle Water", "Drinks", 500.00, 0, UUID.randomUUID(),1)
             restaurantItemDao.insert(item)
-            item = RestaurantItem("Coca Cola", "Drinks", 500.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            item = RestaurantItem("Coca Cola", "Drinks", 500.00, 0, UUID.randomUUID(), 2)
             restaurantItemDao.insert(item)
-            item = RestaurantItem("Fanta", "Drinks", 500.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            item = RestaurantItem("Fanta", "Drinks", 500.00, 0, UUID.randomUUID(), 3)
             restaurantItemDao.insert(item)
         }
     }

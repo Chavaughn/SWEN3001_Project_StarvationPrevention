@@ -13,5 +13,5 @@ data class RestaurantItem(var item_name:String,
                           var item_price:Double,
                           @PrimaryKey(autoGenerate = true) var item_id: Long,
                           var item_image_id: UUID,
-                          var restaurant_id: UUID,
+                          var restaurant_id: Long,
 ): Parcelable
