@@ -7,6 +7,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.swen3001_project_starvationprevention.model.dao.CartItemsDao
+import com.example.swen3001_project_starvationprevention.model.dao.FavouriteItemsDao
 import com.example.swen3001_project_starvationprevention.model.dao.RestaurantItemDao
 import com.example.swen3001_project_starvationprevention.model.dao.RestaurantsDao
 import kotlinx.coroutines.CoroutineScope
@@ -17,13 +18,15 @@ import java.util.*
 @Database(entities =
     [MyCartItem::class,
     Restaurants::class,
-    RestaurantItem::class],
+    RestaurantItem::class,
+    FavouriteItems::class],
     version = 2, exportSchema = false)
 public abstract class StarvationPreventionDatabase : RoomDatabase() {
 
    abstract fun cartItemsDao(): CartItemsDao
    abstract fun restaurantsDao(): RestaurantsDao
    abstract fun restaurantItemDao(): RestaurantItemDao
+   abstract fun favouriteItemsDao(): FavouriteItemsDao
 
    companion object {
         // Singleton prevents multiple instances of database opening at the
@@ -56,16 +59,17 @@ public abstract class StarvationPreventionDatabase : RoomDatabase() {
             super.onOpen(db)
             INSTANCE?.let { database ->
                 scope.launch {
-                    populateDatabase(database.cartItemsDao(), database.restaurantsDao(), database.restaurantItemDao())
+                    populateDatabase(database.cartItemsDao(), database.restaurantsDao(), database.restaurantItemDao(),database.favouriteItemsDao())
                 }
             }
         }
 
-        suspend fun populateDatabase(cartItemsDao: CartItemsDao, restaurantsDao: RestaurantsDao, restaurantItemDao: RestaurantItemDao) {
+        suspend fun populateDatabase(cartItemsDao: CartItemsDao, restaurantsDao: RestaurantsDao, restaurantItemDao: RestaurantItemDao, favouriteItemsDao: FavouriteItemsDao) {
             // Delete all content here.
             cartItemsDao.deleteAll()
             restaurantsDao.deleteAll()
             restaurantItemDao.deleteAll()
+            favouriteItemsDao.deleteAll()
 
             // Add sample Items.
             var restaurant = Restaurants("Mama's Cookshop","6:00 am","6:00 pm",1,1)
@@ -88,6 +92,11 @@ public abstract class StarvationPreventionDatabase : RoomDatabase() {
             restaurantItemDao.insert(item)
             item = RestaurantItem("Fanta", "Drinks", 500.00, 0, UUID.randomUUID(), 3)
             restaurantItemDao.insert(item)
+            var favouriteItem = FavouriteItems("Fried Chicken", "Mains", 1500.00, 1, UUID.randomUUID(), 1)
+            favouriteItemsDao.insert(favouriteItem)
+            favouriteItem = FavouriteItems("Fried Rice", "Mains", 1000.00, 2, UUID.randomUUID(),1)
+            favouriteItemsDao.insert(favouriteItem)
+
         }
     }
 }
