@@ -11,4 +11,6 @@ data class RestaurantsHomeView(var restaurant_name:String,
                                @PrimaryKey(autoGenerate = true) var restaurant_id: Long,
                                var item_name: String,
                                var item_price: Double,
+                               var item_category: String,
+                               var item_id: Long,
 )

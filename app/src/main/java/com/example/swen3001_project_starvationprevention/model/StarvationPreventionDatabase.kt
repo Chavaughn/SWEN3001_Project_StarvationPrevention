@@ -68,10 +68,6 @@ public abstract class StarvationPreventionDatabase : RoomDatabase() {
             restaurantItemDao.deleteAll()
 
             // Add sample Items.
-            var cartItem = MyCartItem("Fried Chicken", "Mains", 1500.00, 0, UUID.randomUUID(), UUID.randomUUID())
-            cartItemsDao.insert(cartItem)
-            cartItem = MyCartItem("Baked Chicken", "Mains", 1700.00, 0, UUID.randomUUID(), UUID.randomUUID())
-            cartItemsDao.insert(cartItem)
             var restaurant = Restaurants("Mama's Cookshop","6:00 am","6:00 pm",1,1)
             restaurantsDao.insert(restaurant)
             restaurant = Restaurants("Papa's Cookshop","6:10 am","6:010 pm",2,3)

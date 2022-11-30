@@ -50,10 +50,10 @@ class HomeFragment : Fragment() {
         layoutManager = LinearLayoutManager(this.context)
 
         recyclerView.layoutManager = layoutManager
-        val adapter = HomeRestaurantsAdapter(this.context)
+        rHViewModel = ViewModelProvider(this)[RestaurantsHomeViewModel::class.java]
+        val adapter = HomeRestaurantsAdapter(this.context, ViewModelProvider(this)[MyCartViewModel::class.java])
         homeRestaurantsAdapter = adapter
         recyclerView.adapter = homeRestaurantsAdapter
-        rHViewModel = ViewModelProvider(this)[RestaurantsHomeViewModel::class.java]
         updateRestaurantsWithDatabase(adapter)
 
         return binding.root

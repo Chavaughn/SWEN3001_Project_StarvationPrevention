@@ -1,5 +1,6 @@
 package com.example.swen3001_project_starvationprevention.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,7 +26,8 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
                 //val itemName = title[position]
                 //val itemPrice = price[position]
                 Toast.makeText(itemView.context, "Item Clicked ${itemList[position]}", Toast.LENGTH_SHORT).show()
-                //findNavController(View ,1).navigate(R.id.action_restaurantFragment_to_itemFragment)
+
+            //findNavController(View ,1).navigate(R.id.action_restaurantFragment_to_itemFragment)
             }
 
         }

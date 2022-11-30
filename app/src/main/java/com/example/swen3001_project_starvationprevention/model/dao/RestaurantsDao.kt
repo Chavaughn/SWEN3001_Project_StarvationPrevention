@@ -23,7 +23,7 @@ interface RestaurantsDao {
     @Query("SELECT * from restaurants ORDER BY restaurant_id ASC")
     fun getAllLiveRestaurants(): LiveData<List<Restaurants>>
 
-    @Query("SELECT restaurantItems.item_name, restaurantItems.item_price, restaurant_name, restaurant_closing_hour, restaurant_opening_hour, restaurants.restaurant_id FROM restaurantItems INNER JOIN restaurants ON restaurants.signature_id = restaurantItems.item_id")
+    @Query("SELECT restaurantItems.item_name, restaurantItems.item_price, restaurantItems.item_id, restaurantItems.item_category, restaurant_name, restaurant_closing_hour, restaurant_opening_hour, restaurants.restaurant_id FROM restaurantItems INNER JOIN restaurants ON restaurants.signature_id = restaurantItems.item_id")
     fun getRestaurantData(): LiveData<List<RestaurantsHomeView>>
 
 }

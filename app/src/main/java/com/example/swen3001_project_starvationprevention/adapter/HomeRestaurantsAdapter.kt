@@ -1,24 +1,33 @@
 package com.example.swen3001_project_starvationprevention.adapter
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.provider.SyncStateContract.Helpers.insert
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.findFragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swen3001_project_starvationprevention.R
+import com.example.swen3001_project_starvationprevention.fragment.HomeFragment
 import com.example.swen3001_project_starvationprevention.model.MyCartItem
-import com.example.swen3001_project_starvationprevention.model.RestaurantItem
-import com.example.swen3001_project_starvationprevention.model.Restaurants
 import com.example.swen3001_project_starvationprevention.model.RestaurantsHomeView
+import com.example.swen3001_project_starvationprevention.model.dao.CartItemsDao
+import com.example.swen3001_project_starvationprevention.model.repo.CartRepository
+import com.example.swen3001_project_starvationprevention.model.viewmodel.MyCartViewModel
+import com.example.swen3001_project_starvationprevention.model.viewmodel.RestaurantsHomeViewModel
+import java.util.*
 
-class HomeRestaurantsAdapter internal constructor(context: Context?): RecyclerView.Adapter<HomeRestaurantsAdapter.RestaurantsViewHolder>(){
+class HomeRestaurantsAdapter internal constructor(context: Context?, viewModel: MyCartViewModel): RecyclerView.Adapter<HomeRestaurantsAdapter.RestaurantsViewHolder>(){
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var restaurants = emptyList<RestaurantsHomeView>() // Cached copy of Restaurants
     private var cartItem = emptyList<MyCartItem>()
+    private var cartViewModel = viewModel
 
     inner class RestaurantsViewHolder(restaurant: View) : RecyclerView.ViewHolder(restaurant) {
         val restaurantName: TextView = itemView.findViewById(R.id.restaurant_Name)
@@ -39,9 +48,13 @@ class HomeRestaurantsAdapter internal constructor(context: Context?): RecyclerVi
             addToCartButton.setOnClickListener{
                 val position: Int = bindingAdapterPosition
                 Toast.makeText(itemView.context, "Added to cart!", Toast.LENGTH_SHORT).show()
+                val cartItem = MyCartItem(restaurants[position].item_name,restaurants[position].item_category,restaurants[position].item_price,restaurants[position].item_id,
+                    UUID.randomUUID(),restaurants[position].restaurant_id)
+                cartViewModel.insert(cartItem)
             }
 
         }
+
 
     }
 
@@ -68,5 +81,17 @@ class HomeRestaurantsAdapter internal constructor(context: Context?): RecyclerVi
         notifyDataSetChanged()
     }
 
+
+
+
+
     override fun getItemCount() = restaurants.size
+
+    companion object {
+        const val EXTRA_ID = "com.doc.myapplication.MyCartItem.ID"
+        const val EXTRA_NAME = "com.doc.myapplication.MyCartItem.NAME"
+        const val EXTRA_CAT = "com.doc.myapplication.MyCartItem.CATEGORY"
+        const val EXTRA_PRICE = "com.doc.myapplication.MyCartItem.PRICE"
+        const val EXTRA_QUAN = "com.doc.myapplication.MyCartItem.QUANTITY"
+    }
 }
