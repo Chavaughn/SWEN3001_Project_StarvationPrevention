@@ -23,6 +23,13 @@ interface RestaurantItemDao {
     @Query("SELECT * FROM restaurantItems WHERE restaurant_id = :restaurantId ORDER BY item_name ASC")
     fun getAllRestaurantItemsByRestaurantId(restaurantId: UUID): List<RestaurantItem>
 
+    //Filter based on item category
+    @Query("SELECT * FROM restaurantItems WHERE item_category = :item_category ORDER BY item_name ASC")
+    fun getAllRestaurantItemsByCategory(item_category: String): List<RestaurantItem>
+
+    @Query("SELECT * FROM restaurantItems WHERE item_category = :item_category ORDER BY item_name ASC")
+    fun getAllLiveRestaurantItemsByCategory(item_category: String): LiveData<List<RestaurantItem>>
+
     @Query("DELETE FROM restaurantItems")
     suspend fun deleteAll()
 }

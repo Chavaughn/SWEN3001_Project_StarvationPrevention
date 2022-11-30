@@ -65,16 +65,19 @@ class RestaurantFragment : Fragment() {
         var Breakfastbtn = _binding!!.textViewBreakfast
         Breakfastbtn.setOnClickListener {
             Toast.makeText(context, "Breakfast Clicked", Toast.LENGTH_SHORT).show()
+            updateFilteredItemsWithDatabase(adapter as ItemListAdapter, "Mains")
         }
 
         var Lunchbtn = _binding!!.textViewLunch
         Lunchbtn.setOnClickListener {
             Toast.makeText(context, "Lunch Clicked", Toast.LENGTH_SHORT).show()
+            updateFilteredItemsWithDatabase(adapter as ItemListAdapter, "Sides")
         }
 
         var Dinnerbtn = _binding!!.textViewDinner
         Dinnerbtn.setOnClickListener {
             Toast.makeText(context, "Dinner Clicked", Toast.LENGTH_SHORT).show()
+            updateFilteredItemsWithDatabase(adapter as ItemListAdapter, "Drinks")
         }
 
 
@@ -83,7 +86,14 @@ class RestaurantFragment : Fragment() {
 
     }
     private fun updateRestaurantWithDatabase(adapter: ItemListAdapter) {
+
         rViewModel.allItems.observe(viewLifecycleOwner, Observer { items ->
+            items?.let { adapter.setData(it) }
+        })
+    }
+
+    private fun updateFilteredItemsWithDatabase(adapter: ItemListAdapter, category: String) {
+        rViewModel.getFilteredItems(category).observe(viewLifecycleOwner, Observer { items ->
             items?.let { adapter.setData(it) }
         })
     }

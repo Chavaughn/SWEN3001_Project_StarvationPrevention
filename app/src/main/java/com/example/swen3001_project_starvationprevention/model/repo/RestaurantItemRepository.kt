@@ -14,6 +14,12 @@ class RestaurantItemRepository(private val restaurantItemDao: RestaurantItemDao)
     // Observed LiveData will notify the observer when the data has changed.
     val allRestaurantItems: LiveData<List<RestaurantItem>> = restaurantItemDao.getAllLiveItems()
 
+    // The suspend modifier tells the compiler that this must be called from a
+    //Get filtered items based on category
+    fun getFilteredItems(category: String): LiveData<List<RestaurantItem>> {
+        return restaurantItemDao.getAllLiveRestaurantItemsByCategory(category)
+    }
+
 
     suspend fun insert(restaurantItem: RestaurantItem) {
         restaurantItemDao.insert(restaurantItem)

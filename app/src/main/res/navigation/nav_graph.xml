@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_itemFragment"
             app:destination="@id/itemFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/restaurantFragment"
@@ -39,6 +42,9 @@
         <argument
             android:name="currentItem"
             app:argType="com.example.swen3001_project_starvationprevention.model.RestaurantItem" />
+        <action
+            android:id="@+id/action_itemFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
     </fragment>
     <fragment
         android:id="@+id/myCartFragment"
@@ -53,6 +59,18 @@
             app:destination="@id/restaurantFragment" />
         <action
             android:id="@+id/action_myCartFragment_to_itemFragment"
+            app:destination="@id/itemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.swen3001_project_starvationprevention.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_favoritesFragment_to_itemFragment"
             app:destination="@id/itemFragment" />
     </fragment>
 </navigation>

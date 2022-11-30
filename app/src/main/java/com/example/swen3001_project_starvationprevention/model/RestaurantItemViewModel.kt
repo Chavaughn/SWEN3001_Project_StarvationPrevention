@@ -12,10 +12,15 @@ class RestaurantItemViewModel(application: Application): AndroidViewModel(applic
     private val repository: RestaurantItemRepository
     val allItems: LiveData<List<RestaurantItem>>
 
+
     init {
         val itemDao = StarvationPreventionDatabase.getDatabase(application, viewModelScope).restaurantItemDao()
         repository = RestaurantItemRepository(itemDao)
         allItems = repository.allRestaurantItems
+    }
+
+   fun getFilteredItems(category: String): LiveData<List<RestaurantItem>> {
+        return repository.getFilteredItems(category)
     }
 
     fun addItem(item: RestaurantItem) = viewModelScope.launch(Dispatchers.IO) {
