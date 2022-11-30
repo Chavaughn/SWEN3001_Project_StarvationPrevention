@@ -19,16 +19,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/itemName"
+            android:id="@+id/totalval"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="208dp"
-            android:text="@string/foodItem1"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginStart="28dp"
+
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/addToCart"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.08"
+            app:layout_constraintStart_toEndOf="@+id/total"
+            app:layout_constraintTop_toTopOf="@+id/guideline14"
+            app:layout_constraintVertical_bias="0.588" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
@@ -46,19 +51,87 @@
 
         <TextView
             android:id="@+id/itemDescription"
-            android:layout_width="318dp"
-            android:layout_height="176dp"
-            android:layout_marginTop="52dp"
-            android:text="@string/loremIpsum"
+            android:layout_width="311dp"
+            android:layout_height="111dp"
+            android:layout_marginTop="16dp"
+            android:text="Item description goes here"
+            app:layout_constraintBottom_toTopOf="@+id/guideline14"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
-            app:layout_constraintTop_toBottomOf="@+id/itemName" />
+            app:layout_constraintTop_toTopOf="@+id/guideline11"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <Button
+            android:id="@+id/increment"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="40dp"
+            android:paddingBottom="10dp"
+            android:text="+"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.859"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton4"
+            android:layout_width="51dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="416dp"
+            android:clickable="true"
+            android:contentDescription="@string/favourites"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.129"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemName"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <TextView
+            android:id="@+id/itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="164dp"
+            android:text="@string/foodItem1"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/FoodPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="Food Price"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/guideline11"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintHorizontal_bias="0.523"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.96" />
+
+        <Button
+            android:id="@+id/decrement"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="40dp"
+            android:text="-"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.553"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/addToCart"
-            android:layout_width="0dp"
-            android:layout_height="75dp"
+            android:layout_width="314dp"
+            android:layout_height="58dp"
             android:background="@drawable/rounded_corners"
             android:text="Add To Cart"
             android:textAllCaps="false"
@@ -69,70 +142,54 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline5"
             app:layout_constraintTop_toBottomOf="@+id/itemDescription"
-            app:layout_constraintVertical_bias="0.905" />
-
-        <Button
-            android:id="@+id/decrement"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="40dp"
-            android:text="-"
-            app:layout_constraintBottom_toTopOf="@+id/itemDescription"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.622"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/increment"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="40dp"
-            android:text="+"
-            app:layout_constraintBottom_toTopOf="@+id/itemDescription"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.83"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintVertical_bias="0.52" />
 
         <TextView
             android:id="@+id/quantityDisplay"
-            android:layout_width="50dp"
-            android:layout_height="20dp"
-            android:layout_marginBottom="52dp"
-            android:text="1"
+            android:layout_width="61dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="44dp"
+            android:text="0"
             android:textAlignment="center"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
+            android:textSize="24dp"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/itemDescription"
+            app:layout_constraintBottom_toTopOf="@+id/guideline11"
             app:layout_constraintEnd_toStartOf="@+id/guideline6"
             app:layout_constraintHorizontal_bias="0.811"
-            app:layout_constraintStart_toStartOf="@+id/guideline5" />
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.983" />
 
         <TextView
             android:id="@+id/total"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginBottom="108dp"
-            android:textColor="@color/black"
-
             android:text="Total:"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/floatingActionButton4"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+
+            app:layout_constraintBottom_toTopOf="@+id/addToCart"
+            app:layout_constraintEnd_toEndOf="@+id/itemDescription"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/guideline14"
+            app:layout_constraintVertical_bias="0.588" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="384dp"
-            android:clickable="true"
-            android:contentDescription="@string/favourites"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.121"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@android:drawable/btn_star_big_on" />
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="253dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="382dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
