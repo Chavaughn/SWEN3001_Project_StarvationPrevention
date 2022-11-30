@@ -1,10 +1,11 @@
-package com.example.swen3001_project_starvationprevention.model
+package com.example.swen3001_project_starvationprevention.model.viewmodel
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
+import com.example.swen3001_project_starvationprevention.model.MyCartItem
+import com.example.swen3001_project_starvationprevention.model.StarvationPreventionDatabase
 import com.example.swen3001_project_starvationprevention.model.repo.CartRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

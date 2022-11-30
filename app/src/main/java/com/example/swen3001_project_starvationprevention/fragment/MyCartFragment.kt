@@ -7,9 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import androidx.fragment.app.commit
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.swen3001_project_starvationprevention.R
 import com.example.swen3001_project_starvationprevention.adapter.CartItemsAdapter
 import com.example.swen3001_project_starvationprevention.databinding.MyCartFragmentBinding
-import com.example.swen3001_project_starvationprevention.model.MyCartViewModel
+import com.example.swen3001_project_starvationprevention.model.viewmodel.MyCartViewModel
 import kotlinx.coroutines.runBlocking
 
 class MyCartFragment : Fragment() {
