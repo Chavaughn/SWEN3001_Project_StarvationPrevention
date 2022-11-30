@@ -13,6 +13,7 @@
         android:icon="@drawable/my_cart"
         android:title="@string/my_cart" />
     <item
+        android:id="@+id/settingsFragment"
         android:icon="@drawable/settings"
         android:title="@string/settings" />
 

@@ -41,10 +41,10 @@ class MyCartFragment : Fragment() {
         layoutManager = LinearLayoutManager(this.context)
 
         recyclerView.layoutManager = layoutManager
-        val adapter = CartItemsAdapter(this.context)
+        myCartItemViewModel = ViewModelProvider(this)[MyCartViewModel::class.java]
+        val adapter = CartItemsAdapter(this.context, myCartItemViewModel)
         cartItemAdapter = adapter
         recyclerView.adapter = cartItemAdapter
-        myCartItemViewModel = ViewModelProvider(this)[MyCartViewModel::class.java]
         updateCartWithDatabase(adapter)
 
 

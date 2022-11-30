@@ -5,17 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.swen3001_project_starvationprevention.R
 import com.example.swen3001_project_starvationprevention.databinding.ItemFragmentBinding
+import com.example.swen3001_project_starvationprevention.model.MyCartItem
+import com.example.swen3001_project_starvationprevention.model.viewmodel.MyCartViewModel
+import java.util.*
 
 class ItemFragment : Fragment() {
 
     private val args by navArgs<ItemFragmentArgs>()
     private var _binding: ItemFragmentBinding? = null
+    private lateinit var cartViewModel: MyCartViewModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -28,6 +32,8 @@ class ItemFragment : Fragment() {
 
         super.onCreate(savedInstanceState)
         _binding = ItemFragmentBinding.inflate(inflater, container, false)
+        cartViewModel = ViewModelProvider(this)[MyCartViewModel::class.java]
+
         var itemName = _binding?.itemName;
         itemName?.text = (args.currentItem.item_name)
 
@@ -44,6 +50,7 @@ class ItemFragment : Fragment() {
         var itemQuantity = _binding!!.quantityDisplay
         var backButton = _binding!!.backButton
         var favButton = _binding!!.favButton
+        var addToCart = _binding!!.addToCart
 
         //Increment Item cost per click
         Incrementbutton.setOnClickListener {
@@ -75,6 +82,15 @@ class ItemFragment : Fragment() {
                 Toast.makeText(context, "Cost Decremented by " + args.currentItem.item_price, Toast.LENGTH_SHORT).show()
             }
 
+        }
+
+        addToCart.setOnClickListener{
+            Toast.makeText(context, "Added ${itemQuantity.text}  ${itemName?.text} to cart", Toast.LENGTH_SHORT).show()
+            var cost = _binding!!.totalval.text.toString().toDouble()
+            val cartItem = MyCartItem(
+                itemName?.text as String, "Added from item view", cost,
+                Math.random().toLong(), UUID.randomUUID(), 1, (itemQuantity.text as String).toInt())
+            cartViewModel.insert(cartItem)
         }
 
         backButton.setOnClickListener {

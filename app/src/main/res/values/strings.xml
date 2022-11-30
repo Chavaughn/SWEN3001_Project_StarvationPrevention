@@ -29,6 +29,7 @@
 
 
     <string name="item_price_disp_home">$%1$d</string>
+    <string name="quantityincart">Quantity: x</string>
     <string name="testrestaurant1">Mama\'s Cookshop</string>
     <string name="testrestaurant2">Papa\'s Cookshop</string>
     <!-- TODO: Remove or change this placeholder text -->

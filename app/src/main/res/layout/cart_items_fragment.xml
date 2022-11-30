@@ -82,17 +82,39 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="96dp" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="34dp"
-            android:layout_height="32dp"
+        <Button
+            android:id="@+id/deleteCartItem"
+            android:layout_width="63dp"
+            android:layout_height="35dp"
+            android:contentDescription="@string/addToCart"
+            app:icon="@android:drawable/ic_menu_delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.866"
             app:layout_constraintStart_toEndOf="@+id/itemCostCart"
             app:layout_constraintTop_toTopOf="@+id/guideline10"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@android:drawable/ic_menu_delete" />
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/quantityincart"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_image" />
+
+        <TextView
+            android:id="@+id/cartItemQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

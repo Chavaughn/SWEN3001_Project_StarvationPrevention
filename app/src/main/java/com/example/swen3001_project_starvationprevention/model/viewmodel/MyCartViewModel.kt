@@ -26,4 +26,7 @@ class MyCartViewModel(application: Application) : AndroidViewModel(application){
     fun insert(myCartItem: MyCartItem) = viewModelScope.launch(Dispatchers.IO){
         repository.insert(myCartItem)
     }
+    fun remove(myCartItem: MyCartItem) = viewModelScope.launch(Dispatchers.IO){
+        repository.remove(myCartItem.item_id.toInt())
+    }
 }

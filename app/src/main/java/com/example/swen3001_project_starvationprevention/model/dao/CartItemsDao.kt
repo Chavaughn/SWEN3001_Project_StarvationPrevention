@@ -21,4 +21,7 @@ interface CartItemsDao {
 
     @Query("SELECT * from cartitems ORDER BY item_name ASC")
     fun getAllLiveCartItems(): LiveData<List<MyCartItem>>
+
+    @Query("DELETE FROM cartitems WHERE item_id = :item_id")
+    fun remove(item_id: Int)
 }

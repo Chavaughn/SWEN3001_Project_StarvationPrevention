@@ -195,7 +195,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/deleteCartItem"
         android:layout_width="257dp"
         android:layout_height="244dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -209,7 +209,7 @@
         android:id="@+id/backButton"
         android:layout_width="54dp"
         android:layout_height="46dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/deleteCartItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toStartOf="parent"
@@ -221,7 +221,7 @@
         android:id="@+id/favButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/deleteCartItem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toEndOf="@+id/backButton"

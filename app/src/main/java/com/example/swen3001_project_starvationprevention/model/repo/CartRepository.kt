@@ -16,4 +16,8 @@ class CartRepository(private val cartItemsDao: CartItemsDao) {
     suspend fun insert(myCartItem: MyCartItem) {
         cartItemsDao.insert(myCartItem)
     }
+
+    suspend fun remove(id : Int){
+        cartItemsDao.remove(id)
+    }
 }
