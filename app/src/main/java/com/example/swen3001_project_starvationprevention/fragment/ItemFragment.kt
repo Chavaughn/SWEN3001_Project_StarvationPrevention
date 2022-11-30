@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.swen3001_project_starvationprevention.databinding.ItemFragmentBinding
 
 class ItemFragment : Fragment() {
+
 
     private var _binding: ItemFragmentBinding? = null
 
@@ -20,8 +22,14 @@ class ItemFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        //TextView itemDescription = (TextView)findViewById(R.id.itemDescription);
+        super.onCreate(savedInstanceState)
         _binding = ItemFragmentBinding.inflate(inflater, container, false)
+        var itemDescription = _binding?.itemDescription;
+        itemDescription?.text = "This is a test description"
+        //binding.itemDescription.text = "This is a test"
+        
+
         return binding.root
 
     }
