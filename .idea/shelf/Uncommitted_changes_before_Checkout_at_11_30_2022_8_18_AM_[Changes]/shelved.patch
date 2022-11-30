@@ -1,0 +1,233 @@
+Index: app/src/main/res/layout/item_fragment.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    android:background=\"@color/Buttons\" >\r\n\r\n    <androidx.constraintlayout.widget.ConstraintLayout\r\n        android:id=\"@+id/constraintLayout\"\r\n        android:layout_width=\"0dp\"\r\n        android:layout_height=\"678dp\"\r\n        android:layout_marginTop=\"144dp\"\r\n        android:background=\"@drawable/rounded_corners\"\r\n        android:backgroundTint=\"@color/SbarIBackground\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.0\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\">\r\n\r\n        <TextView\r\n            android:id=\"@+id/itemName\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"4dp\"\r\n            android:layout_marginTop=\"208dp\"\r\n            android:text=\"@string/foodItem1\"\r\n            android:textSize=\"24sp\"\r\n            android:textStyle=\"bold\"\r\n            app:layout_constraintStart_toStartOf=\"@+id/guideline5\"\r\n            app:layout_constraintTop_toTopOf=\"parent\" />\r\n\r\n        <androidx.constraintlayout.widget.Guideline\r\n            android:id=\"@+id/guideline5\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\"\r\n            app:layout_constraintGuide_begin=\"43dp\" />\r\n\r\n        <androidx.constraintlayout.widget.Guideline\r\n            android:id=\"@+id/guideline6\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:orientation=\"vertical\"\r\n            app:layout_constraintGuide_begin=\"358dp\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/itemDescription\"\r\n            android:layout_width=\"318dp\"\r\n            android:layout_height=\"176dp\"\r\n            android:layout_marginTop=\"52dp\"\r\n            android:text=\"@string/loremIpsum\"\r\n            app:layout_constraintEnd_toStartOf=\"@+id/guideline6\"\r\n            app:layout_constraintHorizontal_bias=\"0.0\"\r\n            app:layout_constraintStart_toStartOf=\"@+id/guideline5\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/itemName\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/addToCart\"\r\n            android:layout_width=\"0dp\"\r\n            android:layout_height=\"75dp\"\r\n            android:background=\"@drawable/rounded_corners\"\r\n            android:text=\"Add To Cart\"\r\n            android:textAllCaps=\"false\"\r\n            android:textSize=\"20sp\"\r\n            android:textStyle=\"bold\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintEnd_toEndOf=\"@+id/itemDescription\"\r\n            app:layout_constraintHorizontal_bias=\"0.0\"\r\n            app:layout_constraintStart_toStartOf=\"@+id/guideline5\"\r\n            app:layout_constraintTop_toBottomOf=\"@+id/itemDescription\"\r\n            app:layout_constraintVertical_bias=\"0.905\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/decrement\"\r\n            android:layout_width=\"48dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_marginBottom=\"40dp\"\r\n            android:text=\"-\"\r\n            app:layout_constraintBottom_toTopOf=\"@+id/itemDescription\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintHorizontal_bias=\"0.622\"\r\n            app:layout_constraintStart_toStartOf=\"parent\" />\r\n\r\n        <Button\r\n            android:id=\"@+id/increment\"\r\n            android:layout_width=\"48dp\"\r\n            android:layout_height=\"48dp\"\r\n            android:layout_marginBottom=\"40dp\"\r\n            android:text=\"+\"\r\n            app:layout_constraintBottom_toTopOf=\"@+id/itemDescription\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintHorizontal_bias=\"0.83\"\r\n            app:layout_constraintStart_toStartOf=\"parent\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/quantityDisplay\"\r\n            android:layout_width=\"50dp\"\r\n            android:layout_height=\"20dp\"\r\n            android:layout_marginBottom=\"52dp\"\r\n            android:text=\"1\"\r\n            android:textAlignment=\"center\"\r\n            android:textColor=\"@color/white\"\r\n            android:visibility=\"visible\"\r\n            app:layout_constraintBottom_toTopOf=\"@+id/itemDescription\"\r\n            app:layout_constraintEnd_toStartOf=\"@+id/guideline6\"\r\n            app:layout_constraintHorizontal_bias=\"0.811\"\r\n            app:layout_constraintStart_toStartOf=\"@+id/guideline5\" />\r\n\r\n        <TextView\r\n            android:id=\"@+id/total\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginStart=\"52dp\"\r\n            android:layout_marginBottom=\"108dp\"\r\n            android:textColor=\"@color/black\"\r\n\r\n            android:text=\"Total:\"\r\n            android:textSize=\"28sp\"\r\n            android:textStyle=\"bold\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintStart_toStartOf=\"parent\" />\r\n\r\n        <com.google.android.material.floatingactionbutton.FloatingActionButton\r\n            android:id=\"@+id/floatingActionButton4\"\r\n            android:layout_width=\"wrap_content\"\r\n            android:layout_height=\"wrap_content\"\r\n            android:layout_marginBottom=\"384dp\"\r\n            android:clickable=\"true\"\r\n            android:contentDescription=\"@string/favourites\"\r\n            app:layout_constraintBottom_toBottomOf=\"parent\"\r\n            app:layout_constraintEnd_toEndOf=\"parent\"\r\n            app:layout_constraintHorizontal_bias=\"0.121\"\r\n            app:layout_constraintStart_toStartOf=\"parent\"\r\n            app:srcCompat=\"@android:drawable/btn_star_big_on\" />\r\n\r\n    </androidx.constraintlayout.widget.ConstraintLayout>\r\n\r\n    <ImageView\r\n        android:id=\"@+id/imageView\"\r\n        android:layout_width=\"257dp\"\r\n        android:layout_height=\"244dp\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.110000014\"\r\n        app:srcCompat=\"@mipmap/friedchicken\" />\r\n\r\n    <com.google.android.material.floatingactionbutton.FloatingActionButton\r\n        android:id=\"@+id/floatingActionButton\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:background=\"#FFFFFF\"\r\n        android:clickable=\"true\"\r\n        app:backgroundTint=\"#FFFFFF\"\r\n        app:layout_constraintBottom_toBottomOf=\"parent\"\r\n        app:layout_constraintEnd_toEndOf=\"parent\"\r\n        app:layout_constraintHorizontal_bias=\"0.94\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:layout_constraintVertical_bias=\"0.019\"\r\n        app:rippleColor=\"#CC544C\"\r\n        app:srcCompat=\"@drawable/favourite_icon\" />\r\n\r\n    <com.google.android.material.floatingactionbutton.FloatingActionButton\r\n        android:id=\"@+id/backButton\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:layout_marginTop=\"12dp\"\r\n        android:clickable=\"true\"\r\n        android:contentDescription=\"@string/previous\"\r\n        app:backgroundTint=\"#FFFFFF\"\r\n        app:defaultNavHost=\"true\"\r\n        app:layout_constraintStart_toStartOf=\"parent\"\r\n        app:layout_constraintTop_toTopOf=\"parent\"\r\n        app:srcCompat=\"@android:drawable/btn_dialog\" />\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/item_fragment.xml b/app/src/main/res/layout/item_fragment.xml
+--- a/app/src/main/res/layout/item_fragment.xml	
++++ b/app/src/main/res/layout/item_fragment.xml	
+@@ -10,7 +10,7 @@
+         android:id="@+id/constraintLayout"
+         android:layout_width="0dp"
+         android:layout_height="678dp"
+-        android:layout_marginTop="144dp"
++        android:layout_marginTop="148dp"
+         android:background="@drawable/rounded_corners"
+         android:backgroundTint="@color/SbarIBackground"
+         app:layout_constraintEnd_toEndOf="parent"
+@@ -19,7 +19,7 @@
+         app:layout_constraintTop_toTopOf="parent">
+ 
+         <TextView
+-            android:id="@+id/itemName"
++            android:id="@+id/MyCart"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="4dp"
+@@ -46,94 +46,25 @@
+ 
+         <TextView
+             android:id="@+id/itemDescription"
+-            android:layout_width="318dp"
+-            android:layout_height="176dp"
+-            android:layout_marginTop="52dp"
++            android:layout_width="0dp"
++            android:layout_height="220dp"
++            android:layout_marginTop="40dp"
+             android:text="@string/loremIpsum"
+             app:layout_constraintEnd_toStartOf="@+id/guideline6"
+-            app:layout_constraintHorizontal_bias="0.0"
+-            app:layout_constraintStart_toStartOf="@+id/guideline5"
+-            app:layout_constraintTop_toBottomOf="@+id/itemName" />
+-
+-        <Button
+-            android:id="@+id/addToCart"
+-            android:layout_width="0dp"
+-            android:layout_height="75dp"
+-            android:background="@drawable/rounded_corners"
+-            android:text="Add To Cart"
+-            android:textAllCaps="false"
+-            android:textSize="20sp"
+-            android:textStyle="bold"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintEnd_toEndOf="@+id/itemDescription"
+-            app:layout_constraintHorizontal_bias="0.0"
++            app:layout_constraintHorizontal_bias="1.0"
+             app:layout_constraintStart_toStartOf="@+id/guideline5"
+-            app:layout_constraintTop_toBottomOf="@+id/itemDescription"
+-            app:layout_constraintVertical_bias="0.905" />
+-
+-        <Button
+-            android:id="@+id/decrement"
+-            android:layout_width="48dp"
+-            android:layout_height="48dp"
+-            android:layout_marginBottom="40dp"
+-            android:text="-"
+-            app:layout_constraintBottom_toTopOf="@+id/itemDescription"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintHorizontal_bias="0.622"
+-            app:layout_constraintStart_toStartOf="parent" />
++            app:layout_constraintTop_toBottomOf="@+id/MyCart" />
+ 
+-        <Button
+-            android:id="@+id/increment"
+-            android:layout_width="48dp"
+-            android:layout_height="48dp"
+-            android:layout_marginBottom="40dp"
+-            android:text="+"
+-            app:layout_constraintBottom_toTopOf="@+id/itemDescription"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintHorizontal_bias="0.83"
+-            app:layout_constraintStart_toStartOf="parent" />
+-
+-        <TextView
+-            android:id="@+id/quantityDisplay"
+-            android:layout_width="50dp"
+-            android:layout_height="20dp"
+-            android:layout_marginBottom="52dp"
+-            android:text="1"
+-            android:textAlignment="center"
+-            android:textColor="@color/white"
+-            android:visibility="visible"
+-            app:layout_constraintBottom_toTopOf="@+id/itemDescription"
+-            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+-            app:layout_constraintHorizontal_bias="0.811"
+-            app:layout_constraintStart_toStartOf="@+id/guideline5" />
+-
+-        <TextView
+-            android:id="@+id/total"
++        <RatingBar
++            android:id="@+id/ratingBar"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+-            android:layout_marginStart="52dp"
+-            android:layout_marginBottom="108dp"
+-            android:textColor="@color/black"
+-
+-            android:text="Total:"
+-            android:textSize="28sp"
+-            android:textStyle="bold"
++            android:layout_marginStart="44dp"
+             app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintStart_toStartOf="parent" />
+-
+-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+-            android:id="@+id/floatingActionButton4"
+-            android:layout_width="wrap_content"
+-            android:layout_height="wrap_content"
+-            android:layout_marginBottom="384dp"
+-            android:clickable="true"
+-            android:contentDescription="@string/favourites"
+-            app:layout_constraintBottom_toBottomOf="parent"
+-            app:layout_constraintEnd_toEndOf="parent"
+-            app:layout_constraintHorizontal_bias="0.121"
+             app:layout_constraintStart_toStartOf="parent"
+-            app:srcCompat="@android:drawable/btn_star_big_on" />
+-
++            app:layout_constraintTop_toTopOf="parent"
++            app:layout_constraintVertical_bias="0.37"
++            tools:ignore="SpeakableTextPresentCheck" />
+     </androidx.constraintlayout.widget.ConstraintLayout>
+ 
+     <ImageView
+@@ -148,33 +79,26 @@
+         app:srcCompat="@mipmap/friedchicken" />
+ 
+     <com.google.android.material.floatingactionbutton.FloatingActionButton
+-        android:id="@+id/floatingActionButton"
++        android:id="@+id/closeButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:background="#FFFFFF"
++        android:layout_marginStart="20dp"
++        android:layout_marginTop="16dp"
+         android:clickable="true"
+-        app:backgroundTint="#FFFFFF"
+-        app:layout_constraintBottom_toBottomOf="parent"
+-        app:layout_constraintEnd_toEndOf="parent"
+-        app:layout_constraintHorizontal_bias="0.94"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:layout_constraintVertical_bias="0.019"
+-        app:rippleColor="#CC544C"
+-        app:srcCompat="@drawable/favourite_icon" />
++        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
++        tools:ignore="SpeakableTextPresentCheck" />
+ 
+     <com.google.android.material.floatingactionbutton.FloatingActionButton
+-        android:id="@+id/backButton"
++        android:id="@+id/favButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="20dp"
+-        android:layout_marginTop="12dp"
++        android:layout_marginTop="16dp"
++        android:layout_marginEnd="16dp"
+         android:clickable="true"
+-        android:contentDescription="@string/previous"
+-        app:backgroundTint="#FFFFFF"
+-        app:defaultNavHost="true"
+-        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+-        app:srcCompat="@android:drawable/btn_dialog" />
+-
++        app:srcCompat="@drawable/favourite_icon"
++        tools:ignore="SpeakableTextPresentCheck" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file
+Index: app/src/main/java/com/example/swen3001_project_starvationprevention/RestaurantFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.swen3001_project_starvationprevention\r\n\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport androidx.navigation.fragment.findNavController\r\nimport com.example.swen3001_project_starvationprevention.databinding.RestaurantFragmentBinding\r\n\r\n/**\r\n * A simple [Fragment] subclass as the second destination in the navigation.\r\n */\r\nclass RestaurantFragment : Fragment() {\r\n\r\n    private var _binding: RestaurantFragmentBinding? = null\r\n\r\n    // This property is only valid between onCreateView and\r\n    // onDestroyView.\r\n    private val binding get() = _binding!!\r\n\r\n    override fun onCreateView(\r\n        inflater: LayoutInflater, container: ViewGroup?,\r\n        savedInstanceState: Bundle?\r\n    ): View? {\r\n\r\n        _binding = RestaurantFragmentBinding.inflate(inflater, container, false)\r\n        return binding.root\r\n\r\n    }\r\n\r\n    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {\r\n        super.onViewCreated(view, savedInstanceState)\r\n    }\r\n\r\n    override fun onDestroyView() {\r\n        super.onDestroyView()\r\n        _binding = null\r\n    }\r\n}
+===================================================================
+diff --git a/app/src/main/java/com/example/swen3001_project_starvationprevention/RestaurantFragment.kt b/app/src/main/java/com/example/swen3001_project_starvationprevention/RestaurantFragment.kt
+--- a/app/src/main/java/com/example/swen3001_project_starvationprevention/RestaurantFragment.kt	
++++ b/app/src/main/java/com/example/swen3001_project_starvationprevention/RestaurantFragment.kt	
+@@ -1,4 +1,4 @@
+-package com.example.swen3001_project_starvationprevention
++package com.example.swen3001_project_starvationprevention.fragment
+ 
+ import android.os.Bundle
+ import androidx.fragment.app.Fragment
+@@ -6,14 +6,12 @@
+ import android.view.View
+ import android.view.ViewGroup
+ import androidx.navigation.fragment.findNavController
+-import com.example.swen3001_project_starvationprevention.databinding.RestaurantFragmentBinding
++import com.example.swen3001_project_starvationprevention.R
++import com.example.swen3001_project_starvationprevention.databinding.ItemFragmentBinding
+ 
+-/**
+- * A simple [Fragment] subclass as the second destination in the navigation.
+- */
+-class RestaurantFragment : Fragment() {
++class ItemFragment : Fragment() {
+ 
+-    private var _binding: RestaurantFragmentBinding? = null
++    private var _binding: ItemFragmentBinding? = null
+ 
+     // This property is only valid between onCreateView and
+     // onDestroyView.
+@@ -24,13 +22,16 @@
+         savedInstanceState: Bundle?
+     ): View? {
+ 
+-        _binding = RestaurantFragmentBinding.inflate(inflater, container, false)
++        _binding = ItemFragmentBinding.inflate(inflater, container, false)
+         return binding.root
+ 
+     }
+ 
+-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+-        super.onViewCreated(view, savedInstanceState)
++    override fun onViewCreated(fragView: View, savedInstanceState: Bundle?) {
++        super.onViewCreated(fragView, savedInstanceState)
++        binding.closeButton.setOnClickListener {
++            findNavController().navigate(R.id.action_itemFragment_to_restaurantFragment)
++        }
+     }
+ 
+     override fun onDestroyView() {

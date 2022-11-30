@@ -77,8 +77,8 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton4"
-            android:layout_width="51dp"
-            android:layout_height="47dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_marginBottom="416dp"
             android:clickable="true"
             android:contentDescription="@string/favourites"
@@ -218,7 +218,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.019"
         app:rippleColor="#CC544C"
-        app:srcCompat="@drawable/favourite_icon" />
+        app:srcCompat="@drawable/selector_favortite_item"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backButton"
