@@ -73,7 +73,7 @@
         app:layout_constraintVertical_bias="0.588" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/restaurantsItemsView"
         android:layout_width="match_parent"
         android:layout_height="546dp"
         android:layout_marginTop="4dp"
@@ -83,7 +83,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline4"
-        app:layout_constraintVertical_bias="0.013" />
+        app:layout_constraintVertical_bias="0.013"
+        tools:listitem="@layout/restaurant_card_layout" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"

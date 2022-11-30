@@ -17,6 +17,9 @@
     <string name="topItemsRestaurants">Top Restaurant Items</string>
     <string name="foodItem1">Food Item 1</string>
     <string name="foodItem2">Food Item 2</string>
+    <string name="specialty">Restaurant Specialty</string>
+    <string name="price">Item Price: </string>
+    <string name="addToCart">Add to Cart</string>
 
     <!--Bottom Menu Navigation Strings-->
     <string name="home">Home</string>
@@ -24,6 +27,8 @@
     <string name="my_cart">My Cart</string>
     <string name="settings">Settings</string>
 
+
+    <string name="item_price_disp_home">$%1$d</string>
     <string name="testrestaurant1">Mama\'s Cookshop</string>
     <string name="testrestaurant2">Papa\'s Cookshop</string>
     <!-- TODO: Remove or change this placeholder text -->

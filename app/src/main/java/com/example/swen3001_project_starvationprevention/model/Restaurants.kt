@@ -9,5 +9,5 @@ data class Restaurants(var restaurant_name:String,
                        var restaurant_opening_hour:String,
                        var restaurant_closing_hour:String,
                        @PrimaryKey(autoGenerate = true) var restaurant_id: Long,
-                       var restaurant_items_id: UUID,
+                       var signature_id: Long,
 )

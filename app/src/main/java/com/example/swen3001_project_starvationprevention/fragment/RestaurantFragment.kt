@@ -1,7 +1,5 @@
 package com.example.swen3001_project_starvationprevention.fragment
 
-import android.graphics.Bitmap
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swen3001_project_starvationprevention.adapter.ItemListAdapter
 import com.example.swen3001_project_starvationprevention.databinding.RestaurantFragmentBinding
-import com.example.swen3001_project_starvationprevention.model.RestaurantItemViewModel
+import com.example.swen3001_project_starvationprevention.model.viewmodel.RestaurantItemViewModel
 import com.example.swen3001_project_starvationprevention.R
 
 /**
@@ -43,7 +41,7 @@ class RestaurantFragment : Fragment() {
 
         _binding = RestaurantFragmentBinding.inflate(inflater, container, false)
 
-        val recyclerView = _binding!!.recyclerView
+        val recyclerView = _binding!!.restaurantsItemsView
         layoutManager = LinearLayoutManager(this.context)
 
         recyclerView.layoutManager = layoutManager
