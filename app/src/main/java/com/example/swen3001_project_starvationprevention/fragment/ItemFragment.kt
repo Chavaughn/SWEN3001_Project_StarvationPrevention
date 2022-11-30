@@ -42,9 +42,13 @@ class ItemFragment : Fragment() {
         var Incrementbutton = _binding!!.increment
         var Decrementbutton = _binding!!.decrement
         var itemQuantity = _binding!!.quantityDisplay
+        var backButton = _binding!!.backButton
+        var favButton = _binding!!.favButton
+
         //Increment Item cost per click
         Incrementbutton.setOnClickListener {
             //Increment item quantity per click
+            //findNavController().navigate(R.id.action_itemFragment_to_restaurantFragment)
             var quantity = itemQuantity.text.toString().toInt()
             quantity++
             itemQuantity.text = quantity.toString()
@@ -71,10 +75,15 @@ class ItemFragment : Fragment() {
                 Toast.makeText(context, "Cost Decremented by " + args.currentItem.item_price, Toast.LENGTH_SHORT).show()
             }
 
-            var backButton = _binding!!.backButton
-            backButton.setOnClickListener {
-                findNavController().navigate(R.id.action_itemFragment_to_restaurantFragment)
-            }
+        }
+
+        backButton.setOnClickListener {
+            findNavController().navigate(R.id.action_itemFragment_to_restaurantFragment)
+            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show()
+        }
+
+        favButton.setOnClickListener {
+            Toast.makeText(context, "Added to Favourites", Toast.LENGTH_SHORT).show()
         }
 
         return binding.root
