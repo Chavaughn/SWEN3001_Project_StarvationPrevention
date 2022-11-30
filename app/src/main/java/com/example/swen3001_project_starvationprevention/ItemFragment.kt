@@ -27,9 +27,12 @@ class ItemFragment : Fragment() {
     ): View? {
         //TextView itemDescription = (TextView)findViewById(R.id.itemDescription);
         super.onCreate(savedInstanceState)
-        binding.floatingActionButton2
-        
         _binding = ItemFragmentBinding.inflate(inflater, container, false)
+        var itemDescription = _binding?.itemDescription;
+        itemDescription?.text = "This is a test description"
+        //binding.itemDescription.text = "This is a test"
+        
+
         return binding.root
 
     }
