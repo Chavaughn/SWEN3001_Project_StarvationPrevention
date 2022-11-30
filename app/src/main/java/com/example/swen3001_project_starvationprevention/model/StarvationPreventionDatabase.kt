@@ -65,6 +65,7 @@ public abstract class StarvationPreventionDatabase : RoomDatabase() {
             // Delete all content here.
             cartItemsDao.deleteAll()
             restaurantsDao.deleteAll()
+            restaurantItemDao.deleteAll()
 
             // Add sample Items.
             var cartItem = MyCartItem("Fried Chicken", "Mains", 1500.00, 0, UUID.randomUUID(), UUID.randomUUID())
@@ -82,6 +83,12 @@ public abstract class StarvationPreventionDatabase : RoomDatabase() {
             item = RestaurantItem("Fried Noodles", "Mains", 1000.00, 0, UUID.randomUUID(), UUID.randomUUID())
             restaurantItemDao.insert(item)
             item = RestaurantItem("Fried Fish", "Mains", 2000.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            restaurantItemDao.insert(item)
+            item = RestaurantItem("Bottle Water", "Drinks", 500.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            restaurantItemDao.insert(item)
+            item = RestaurantItem("Coca Cola", "Drinks", 500.00, 0, UUID.randomUUID(), UUID.randomUUID())
+            restaurantItemDao.insert(item)
+            item = RestaurantItem("Fanta", "Drinks", 500.00, 0, UUID.randomUUID(), UUID.randomUUID())
             restaurantItemDao.insert(item)
         }
     }

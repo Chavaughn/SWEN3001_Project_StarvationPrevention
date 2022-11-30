@@ -6,8 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swen3001_project_starvationprevention.R
+import com.example.swen3001_project_starvationprevention.fragment.RestaurantFragmentDirections
 import com.example.swen3001_project_starvationprevention.model.RestaurantItem
 
 class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
@@ -21,7 +23,13 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
         init{
             itemView.setOnClickListener{
+
                 val position: Int = bindingAdapterPosition
+                //val action = restaurantFragmentDirections
+                val action = RestaurantFragmentDirections.actionRestaurantFragmentToItemFragment(currentItem = itemList[position])
+                itemView.findNavController().navigate(action)
+
+
                 //val itemName = title[position]
                 //val itemPrice = price[position]
                 Toast.makeText(itemView.context, "Item Clicked ${itemList[position]}", Toast.LENGTH_SHORT).show()

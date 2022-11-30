@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_itemFragment_to_restaurantFragment"
             app:destination="@id/restaurantFragment" />
+        <argument
+            android:name="currentItem"
+            app:argType="com.example.swen3001_project_starvationprevention.model.RestaurantItem" />
     </fragment>
     <fragment
         android:id="@+id/myCartFragment"
