@@ -14,9 +14,9 @@ class FavouriteItemsRepository(private val favouriteItemsDao: FavouriteItemsDao)
         favouriteItemsDao.insert(item)
     }
 
-    //suspend fun delete(item: FavouriteItems) {
-        //favouriteItemsDao.delete(item)
-    //}
+    suspend fun delete(item: FavouriteItems) {
+        favouriteItemsDao.delete(item.item_id)
+    }
 
     suspend fun deleteAll() {
         favouriteItemsDao.deleteAll()

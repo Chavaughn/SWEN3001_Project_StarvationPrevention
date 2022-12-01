@@ -21,8 +21,8 @@ interface FavouriteItemsDao {
     @Query("DELETE FROM favouriteItems")
     suspend fun deleteAll()
 
-    //@Query("DELETE FROM favouriteItems WHERE item_name = :item_name")
-    //suspend fun delete(item_name: FavouriteItems)
+    @Query("DELETE FROM favouriteItems WHERE item_id = :item_id")
+    suspend fun delete(item_id: Long)
 
 
 }

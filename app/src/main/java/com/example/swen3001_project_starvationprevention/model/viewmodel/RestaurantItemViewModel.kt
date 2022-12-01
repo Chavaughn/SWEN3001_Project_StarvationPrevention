@@ -25,6 +25,10 @@ class RestaurantItemViewModel(application: Application): AndroidViewModel(applic
         return repository.getFilteredItems(category)
     }
 
+    fun getRestaurantItems(name: String): LiveData<List<RestaurantItem>> {
+        return repository.getRestaurantItems(name)
+    }
+
     fun addItem(item: RestaurantItem) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(item)
     }

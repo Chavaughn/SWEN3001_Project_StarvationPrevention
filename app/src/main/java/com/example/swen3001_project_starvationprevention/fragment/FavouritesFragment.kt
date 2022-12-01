@@ -46,10 +46,10 @@ class FavouritesFragment : Fragment() {
         layoutManager = LinearLayoutManager(this.context)
         val recyclerView = _binding!!.favrecyclerview
         recyclerView.layoutManager = layoutManager
-        adapter = FavouriteAdapter()
+        fViewModel = ViewModelProvider(this)[FavouritesViewModel::class.java]
+        adapter = FavouriteAdapter(this.context, fViewModel)
         recyclerView.adapter = adapter
 
-        fViewModel = ViewModelProvider(this)[FavouritesViewModel::class.java]
         updatefavouriteWithDatabase(adapter as FavouriteAdapter)
 
         return binding.root

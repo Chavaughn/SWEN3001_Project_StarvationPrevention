@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.swen3001_project_starvationprevention.R
 import com.example.swen3001_project_starvationprevention.databinding.ItemFragmentBinding
+import com.example.swen3001_project_starvationprevention.model.FavouriteItems
 import com.example.swen3001_project_starvationprevention.model.MyCartItem
+import com.example.swen3001_project_starvationprevention.model.viewmodel.FavouritesViewModel
 import com.example.swen3001_project_starvationprevention.model.viewmodel.MyCartViewModel
 import java.util.*
 
@@ -20,6 +22,7 @@ class ItemFragment : Fragment() {
     private val args by navArgs<ItemFragmentArgs>()
     private var _binding: ItemFragmentBinding? = null
     private lateinit var cartViewModel: MyCartViewModel
+    private lateinit var favouritesViewModel: FavouritesViewModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -33,13 +36,16 @@ class ItemFragment : Fragment() {
         super.onCreate(savedInstanceState)
         _binding = ItemFragmentBinding.inflate(inflater, container, false)
         cartViewModel = ViewModelProvider(this)[MyCartViewModel::class.java]
+        favouritesViewModel = ViewModelProvider(this)[FavouritesViewModel::class.java]
 
-        var itemName = _binding?.itemName;
+        var itemName = _binding?.itemName
         itemName?.text = (args.currentItem.item_name)
 
-        var itemPrice = _binding?.FoodPrice;
+        var itemPrice = _binding?.FoodPrice
         itemPrice?.text = (args.currentItem.item_price.toString())
 
+        var itemCategory = _binding?.itemCategory
+        itemCategory?.text = (args.currentItem.item_category)
 
         //binding.itemDescription.text = "This is a test"
         
@@ -64,7 +70,6 @@ class ItemFragment : Fragment() {
             cost += args.currentItem.item_price
             _binding!!.totalval.text = cost.toString()
             //toast to say cost incremented by item price
-            Toast.makeText(context, "Cost Incremented by " + args.currentItem.item_price, Toast.LENGTH_SHORT).show()
 
         }
         //Decrement Item cost per click
@@ -79,7 +84,6 @@ class ItemFragment : Fragment() {
                 cost -= args.currentItem.item_price
                 _binding!!.totalval.text = cost.toString()
                 //toast to say cost decremented by item price
-                Toast.makeText(context, "Cost Decremented by " + args.currentItem.item_price, Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -88,18 +92,21 @@ class ItemFragment : Fragment() {
             Toast.makeText(context, "Added ${itemQuantity.text}  ${itemName?.text} to cart", Toast.LENGTH_SHORT).show()
             var cost = _binding!!.totalval.text.toString().toDouble()
             val cartItem = MyCartItem(
-                itemName?.text as String, "Added from item view", cost,
+                itemName?.text as String, itemCategory?.text as String, cost,
                 Math.random().toLong(), UUID.randomUUID(), 1, (itemQuantity.text as String).toInt())
             cartViewModel.insert(cartItem)
         }
 
         backButton.setOnClickListener {
             findNavController().navigate(R.id.action_itemFragment_to_restaurantFragment)
-            Toast.makeText(context, "clicked", Toast.LENGTH_SHORT).show()
         }
 
         favButton.setOnClickListener {
             Toast.makeText(context, "Added to Favourites", Toast.LENGTH_SHORT).show()
+            val favourite = FavouriteItems(
+                itemName?.text as String, itemCategory?.text as String, (itemPrice?.text as String).toDouble(),
+                Math.random().toLong(), UUID.randomUUID(), 1)
+            favouritesViewModel.addItem(favourite)
         }
 
         return binding.root

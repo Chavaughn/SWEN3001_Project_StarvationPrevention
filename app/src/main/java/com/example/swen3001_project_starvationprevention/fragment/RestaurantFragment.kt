@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.swen3001_project_starvationprevention.adapter.ItemListAdapter
@@ -24,6 +25,7 @@ class RestaurantFragment : Fragment() {
 
 
     private var _binding: RestaurantFragmentBinding? = null
+    private val args by navArgs<RestaurantFragmentArgs>()
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>? = null
     private lateinit var rViewModel: RestaurantItemViewModel
@@ -49,7 +51,7 @@ class RestaurantFragment : Fragment() {
         recyclerView.adapter = adapter
 
         rViewModel = ViewModelProvider(this)[RestaurantItemViewModel::class.java]
-        updateRestaurantWithDatabase(adapter as ItemListAdapter)
+        updateRestaurantWithDatabase(adapter as ItemListAdapter, "Mama's Cookshop")
 
 
         //Create Button
@@ -62,19 +64,16 @@ class RestaurantFragment : Fragment() {
         //Create Clickable text
         var Breakfastbtn = _binding!!.textViewBreakfast
         Breakfastbtn.setOnClickListener {
-            Toast.makeText(context, "Breakfast Clicked", Toast.LENGTH_SHORT).show()
             updateFilteredItemsWithDatabase(adapter as ItemListAdapter, "Mains")
         }
 
         var Lunchbtn = _binding!!.textViewLunch
         Lunchbtn.setOnClickListener {
-            Toast.makeText(context, "Lunch Clicked", Toast.LENGTH_SHORT).show()
             updateFilteredItemsWithDatabase(adapter as ItemListAdapter, "Sides")
         }
 
         var Dinnerbtn = _binding!!.textViewDinner
         Dinnerbtn.setOnClickListener {
-            Toast.makeText(context, "Dinner Clicked", Toast.LENGTH_SHORT).show()
             updateFilteredItemsWithDatabase(adapter as ItemListAdapter, "Drinks")
         }
 
@@ -83,9 +82,9 @@ class RestaurantFragment : Fragment() {
         return binding.root
 
     }
-    private fun updateRestaurantWithDatabase(adapter: ItemListAdapter) {
+    private fun updateRestaurantWithDatabase(adapter: ItemListAdapter, name: String) {
 
-        rViewModel.allItems.observe(viewLifecycleOwner, Observer { items ->
+        rViewModel.getRestaurantItems(name).observe(viewLifecycleOwner, Observer { items ->
             items?.let { adapter.setData(it) }
         })
     }

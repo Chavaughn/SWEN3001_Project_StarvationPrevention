@@ -21,6 +21,7 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
         var itemImageView = itemView.findViewById<ImageView>(R.id.item_image)
         var itemName: TextView = itemView.findViewById(R.id.item_name)
         val itemPrice: TextView = itemView.findViewById(R.id.item_price)
+        val itemCategory: TextView = itemView.findViewById(R.id.item_Category)
 
         init{
             itemView.setOnClickListener{
@@ -33,7 +34,6 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
 
                 //val itemName = title[position]
                 //val itemPrice = price[position]
-                Toast.makeText(itemView.context, "Item Clicked ${itemList[position]}", Toast.LENGTH_SHORT).show()
 
             //findNavController(View ,1).navigate(R.id.action_restaurantFragment_to_itemFragment)
             }
@@ -52,6 +52,7 @@ class ItemListAdapter: RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>() {
         val currentItem = itemList[position]
         holder.itemName.text = currentItem.item_name
         holder.itemPrice.text = currentItem.item_price.toString()
+        holder.itemCategory.text = currentItem.item_category.toString()
         //holder.itemImageView.setImageResource(foodImage[position])
 
     }

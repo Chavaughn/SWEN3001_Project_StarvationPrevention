@@ -1,9 +1,12 @@
 package com.example.swen3001_project_starvationprevention.model
 
+import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 import java.util.*
 
+@Parcelize
 @Entity(tableName = "restaurantshomeview")
 data class RestaurantsHomeView(var restaurant_name:String,
                                var restaurant_opening_hour:String,
@@ -13,4 +16,4 @@ data class RestaurantsHomeView(var restaurant_name:String,
                                var item_price: Double,
                                var item_category: String,
                                var item_id: Long,
-)
+) : Parcelable

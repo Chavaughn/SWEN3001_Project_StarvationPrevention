@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_restaurantFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
+        <argument
+            android:name="currentRestaurant"
+            app:argType="com.example.swen3001_project_starvationprevention.model.RestaurantsHomeView" />
     </fragment>
     <fragment
         android:id="@+id/itemFragment"

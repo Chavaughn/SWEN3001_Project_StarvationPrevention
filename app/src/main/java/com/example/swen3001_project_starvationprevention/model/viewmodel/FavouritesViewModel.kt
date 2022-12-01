@@ -24,7 +24,7 @@ class FavouritesViewModel (application: Application): AndroidViewModel(applicati
         repository.insert(item)
     }
 
-    //fun deleteItem(item: FavouriteItems) = viewModelScope.launch(Dispatchers.IO) {
-        //repository.delete(item)
-    //}
+    fun deleteItem(item: FavouriteItems) = viewModelScope.launch(Dispatchers.IO) {
+        repository.delete(item)
+    }
 }

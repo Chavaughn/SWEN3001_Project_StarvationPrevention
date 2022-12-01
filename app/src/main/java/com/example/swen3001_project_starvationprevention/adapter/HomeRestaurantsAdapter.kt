@@ -32,7 +32,6 @@ class HomeRestaurantsAdapter internal constructor(context: Context?, viewModel: 
 
             restaurantName.setOnClickListener{
                 val position: Int = bindingAdapterPosition
-                Toast.makeText(itemView.context, "Restaurant ${restaurants[position].restaurant_name} clicked", Toast.LENGTH_SHORT).show()
                 restaurant.findNavController().navigate(R.id.action_homeFragment_to_restaurantFragment)
             }
 

@@ -20,6 +20,10 @@ class RestaurantItemRepository(private val restaurantItemDao: RestaurantItemDao)
         return restaurantItemDao.getAllLiveRestaurantItemsByCategory(category)
     }
 
+    fun getRestaurantItems(name: String): LiveData<List<RestaurantItem>> {
+        return restaurantItemDao.getAllLiveRestaurantItems()
+    }
+
 
     suspend fun insert(restaurantItem: RestaurantItem) {
         restaurantItemDao.insert(restaurantItem)
